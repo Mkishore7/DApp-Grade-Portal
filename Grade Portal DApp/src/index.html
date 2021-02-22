@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade</title>
+
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container" style="width: 650px;">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="text-center">Grade Portal</h1>
+        <hr />
+        <br />
+        <div id="loader">
+          <p class="text-center">Loading (Please refresh if the browser does not reload)</p>
+        </div>
+        <div id="content" style="display: none;">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">S.No.</th>
+                <th scope="col">Name</th>
+                <th scope="col">Roll No</th>
+              </tr>
+            </thead>
+            <tbody id="studentResults">
+            </tbody>
+          </table>
+          <hr />
+
+          <form onSubmit="App.setGradeFunc(); return false;">
+            <div class="form-group">
+              <label for="rollno">Roll Number:</label><br>
+              <input type="text" id="rollno" name="rollno"><br>
+              <label for="grade">Grade:</label><br>
+              <input type="text" id="grade" name="grade">
+            </div>
+            <button type="submit" class="btn btn-primary">Update Grade</button>
+            <hr />
+          </form>
+
+          <form onSubmit="App.addStudentFunc(); return false;">
+            <div class="form-group">
+              <label for="privateKey">Private Key:</label><br>
+              <input type="text" id="privateKey" name="privateKey"><br>
+              <label for="address">Address:</label><br>
+              <input type="text" id="address" name="address"><br>
+              <label for="rollno1">Roll Number:</label><br>
+              <input type="text" id="rollno1" name="rollno1"><br>
+              <label for="name">Name:</label><br>
+              <input type="text" id="name" name="name"><br>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Student</button>
+            <hr />
+          </form>
+
+            <form onSubmit="App.showGradeFunc(); return false;">
+            <div class="form-group">
+              <label for="rollno2">Roll Number:</label><br>
+              <input type="text" id="rollno2" name="rollno2"><br>
+            </div>
+            <button type="submit" class="btn btn-primary">See Grade</button>
+            <hr />
+
+             <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Roll No</th>
+                <th scope="col">Grade</th>
+              </tr>
+            </thead>
+            <tbody id="showGrade"><b></b>
+              <!-- <tr>
+                <td>rollNo</td>
+                <td>grade</td>
+              </tr> -->
+            </tbody>
+          </table>
+
+          </form>
+
+          <!-- MECHANISM FOR CRYPTOGRAPHY -->
+
+          <!-- <label for="pv1key">Private Key: </label><br><input type="text" id="pv1key" name="pv1key"
+            value="9a611d4c7aa3250fc81d864b5602e74f17a2f6e2b536e6f19f109a08337bdc46"><br><br>
+          <input type="button" onclick="GetPublicKeyFromPrivateKey()" value="Convert To Public Key"
+            class="btn btn-primary"> <br>
+          <div id="pbkeyvalue"></div> -->
+          <!-- <br>
+          <label for="pbkey">Public Key: </label><input type="text" id="pbkey" name="pbkey"
+            value="335755267ded6b45167ec805814986188f11f6cd77e9cab23f2d73f7c8926d18b1a60c4eede854e0223aeef5cd99f48d582cbca5f70f23a04d3e6a3b2800a2ad">
+          <label for="mrkse">Grade: </label><input type="text" id="mrkse" value="0" name="mrkse">
+          <input type="button" onclick="encrypted()" value="Convert To Cipher" class="btn btn-primary"> <br>
+
+          <div id="ciphervalue"></div>
+          <br>
+          <label for="pvkey">Private Key: </label> <input type="text" id="pvkey" name="pvkey"
+            value="9a611d4c7aa3250fc81d864b5602e74f17a2f6e2b536e6f19f109a08337bdc46">
+          <label for="mrksd">Encrypted Grade:</label><input type="text" id="mrksd" name="mrksd"
+            value="AgnoP4WTwCaJpxx7GyM0egTDvKJO4Xt1tUWFQqkOFSvY7Q+jTT44oDTHQSkOU/wlnDYq58dgbUhJ1m2zGH3lQ5AQZbqjzOul0wv0pWW4pyb84zt8lZBs6Ztto3ekAjHF5JsnFVhY9PStUZJqw4a8OC+lohupVNjMXa3ubcKFv5MJ"><br><br>
+          <input type="button" onclick="decrypted()" value="Decrypt To Original Grade" class="btn btn-primary">
+          <div id="decryptvalue"></div> -->
+
+          <p id="accountAddress" class="text-center"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/web3.min.js"></script>
+  <script src="js/truffle-contract.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/bundle.js"></script>
+  <!-- <script src="js/temppp.js"></script> -->
+</body>
+
+</html>
