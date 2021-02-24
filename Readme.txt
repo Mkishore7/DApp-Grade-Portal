@@ -1,4 +1,5 @@
 This Decentralised App was created by Mohit Kishore, 1701CS28.
+This is a simple decentralised app made with solidity using smart contracts.
 
 Please ensure you have the following tools available in order to run the app:
 1. Ganache
